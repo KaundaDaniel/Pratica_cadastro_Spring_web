@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html th:replace="~{base :: layout (~{::main})}">
+<head>
+       <title>Detalhes do Estudante</title>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>Detalhes do  Estudante</h1>
+            <p>Nome: <span th:text="${estudantes.name}"></span></p>
+            <p>Telefone: <span th:text="${estudantes.telefone}"></span></p>
+            <p><span th:text="${estudantes.email}"></span></p>
+        </div>
+    </main>
+</body>
+</html>

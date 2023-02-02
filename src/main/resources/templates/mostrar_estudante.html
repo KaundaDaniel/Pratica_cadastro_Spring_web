@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html th:replace="~{base ::layout (~{::main})}">
+
+<body>
+
+
+    <main >
+        <div>
+        <div >
+            <h1>Estudantes</h1>
+           <a class="nav-link text-white" th:href="@{/estudantes/cadastro}">Cadastrar Estudante</a>
+        </div>
+        <div>
+            
+        </div>     
+    
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Acções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each ="estudante : ${estudantes}">
+                    <td th:text="${estudante.id}"></td>
+                    <td>
+                        <a th:href="@{/estudantes/{id}(id=${estudante.id})}" th:text="${estudante.name}"></a>
+                    </td>
+                    <td th:text="${estudante.telefone}"></td>
+                    <td th:text="${estudante.email}"></td>
+                    <td>
+                        <a th:href="@{/estudantes/editar/{id}(id=${estudante.id})}"  class="btn btn-primary"> Editar</a>    
+                        <a th:href="@{/estudantes/apagar/{id}(id=${estudante.id})}" class="btn btn-danger"> Apagar</a>
+      
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>
